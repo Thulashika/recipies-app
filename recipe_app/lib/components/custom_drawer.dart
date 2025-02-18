@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/screens/home_screen.dart';
+import 'package:recipe_app/routes/router_functions.dart';
+
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({
     super.key,
@@ -7,6 +9,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.white,
       child: ListView(
         children: [
           ListTile(
@@ -22,7 +25,9 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.star),
             title: const Text('Favorites'),
-            onTap: () {},
+            onTap: () {
+                navigateToFavorites(context);
+            },
           ),
         ],
       ),
